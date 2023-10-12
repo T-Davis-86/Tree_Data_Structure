@@ -1,0 +1,43 @@
+from Binary_Tree import Bin_tree, bin_node
+from Gen_Tree import node_Tree,Gen_tree
+
+# For General tree
+node1 = node_Tree(5)
+node2 = node_Tree(2)
+node3 = node_Tree(10)
+node4 = node_Tree(4)
+node5 = node_Tree(6)
+node6 = node_Tree(8)
+node7 = node_Tree(9)
+node1.add_child(node2)
+node2.add_child(node3)
+node1.add_child(node4)
+node3.add_child(node6)
+node6.add_child(node7)
+node2.add_child(node5)
+tree = Gen_tree(node1)
+print("Preorder Tree")
+print(tree.display_tree_preorder(),"\n")
+print("Postorder Tree")
+print(tree.display_tree_postorder(),"\n")
+
+# For an inorder binary tree
+tree = Bin_tree(10)
+tree.insert(5)
+tree.insert(15)
+tree.insert(2)
+tree.insert(7)
+tree.insert(12)
+tree.insert(17)
+tree.insert(25)
+tree.insert(1)
+
+print("Original Tree:")
+tree.display_tree(tree.root)
+print("\nSearch for the number 1:")
+tree.search_tree(tree.root,1)
+print("Current Tree:")
+print("Delete number 15:")
+tree.delete_node(tree.root, 15)
+print("New Tree:")
+tree.display_tree(tree.root)
